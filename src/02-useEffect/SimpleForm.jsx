@@ -6,10 +6,9 @@ export const SimpleForm = () => {
     const [formState, setFormState] = useState ({
         username: 'Maria',
         email: 'maria@google.com'
-    });
-       
-    
-    const {  username, email } = formState;
+    });   
+
+    const { username, email } = formState;
 
     const onInputChange = ( {target} ) => {
         const { name, value } = target;
@@ -29,6 +28,10 @@ export const SimpleForm = () => {
     // }, [ formState ] );
 
     // useEffect( () => {
+    //     console.log(' The name has changed');
+    // }, [ username ] );
+
+    // useEffect( () => {
     //     console.log(' The email has changed');
     // }, [ email ] );
 
@@ -36,7 +39,6 @@ export const SimpleForm = () => {
     <>
         <h1>Simple Form</h1>
         <hr />
-
         <input 
             type="text" 
             className="form-control"
@@ -45,8 +47,7 @@ export const SimpleForm = () => {
             value={ username }   
             onChange={ onInputChange }  
         />
-
-<input 
+        <input 
             type="email" 
             className="form-control mt-2"
             placeholder="mrestrella4@gmail.com"
@@ -54,14 +55,9 @@ export const SimpleForm = () => {
             value={ email }       
             onChange={ onInputChange }
         />
-
         {
             ( username === 'Maria2' ) && <Message />
-        }
-
-
-
-      
+        }     
     </>
   )
 }
